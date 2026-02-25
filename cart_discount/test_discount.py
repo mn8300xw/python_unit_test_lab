@@ -10,7 +10,28 @@ class TestDiscount(TestCase):
         self.assertEqual(expected_discount, discount(prices))
 
     
-    # TODO more unit tests here. Each test should test one scenario
+    def test_list_of_two_prices(self):
+        prices = [10, 4]
+        expected_discount = 0
+        self.assertEqual(expected_discount, discount(prices))
+
+    def test_not_a_list_but_integer(self):
+
+        with self.assertRaises(TypeError):
+            discount(10)
+
+    def test_discount_empty_list(self):
+        self.fail('finish test')
+
+    def test_not_a_list_but_string(self):
+        self.fail('must be an integer')
+
+    def test_list_of_different_types(self):
+        self.fail('must be an integer list')
+
+    def test_null_input(self):
+        self.fail('must have an entry to calculate discount')
+
 
 
 if __name__ == '__main__':
